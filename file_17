@@ -1,0 +1,5 @@
+## API Endpoints
+
+- **POST /api/v1/send-notification**
+
+  Request Body:

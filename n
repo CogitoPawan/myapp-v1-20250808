@@ -1,0 +1,12 @@
+from fastapi.testclient import TestClient
+from app.main import app
+
+client = TestClient(app)
+
+def test_send_notification():
+    response = client.post(
+        "/api/v1/send-notification",
+        json={"to": "+1234567890", "message": "Hello from Twilio"}
+    )
+    assert response.status_code == 200
+    assert response.json()["status"] == "Success"
